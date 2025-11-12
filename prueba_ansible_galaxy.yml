@@ -1,10 +1,18 @@
 ---
-- name: ejecutar en localhost sin tocar el sistema
+- name: Ejecutar collections de ansible galaxy
   hosts: all
-  gather_facts: false
+  gather_facts: true
   become: false
 
   tasks:
+    - name: Obtener timestamp actual
+      set_fact:
+        timestamp: "{{ lookup('pipe', 'date +%Y-%m-%d_%H-%M-%S') }}"
+
+    - name: Mostrar timestamp
+      ansible.builtin.debug:
+        msg: "Fecha actual: {{ timestamp }}"
+
     - name: Lanzar comando windows
       ansible.windows.win_shell: dir C:\
       register: command_output
