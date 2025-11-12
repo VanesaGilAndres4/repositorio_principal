@@ -5,10 +5,6 @@
   become: false
 
   tasks:
-    - name: Mostrar fecha y hora actual del host Windows
-      ansible.builtin.debug:
-        msg: "Fecha actual: {{ ansible_date_time.date }} - Hora: {{ ansible_date_time.time }}"
-
     - name: Lanzar comando windows
       ansible.windows.win_shell: dir C:\
       register: command_output
