@@ -1,6 +1,6 @@
 ---
 - name: Prueba submodulo desde GitHub
-  hosts: localhost
+  hosts: all
   become: false
   gather_facts: false
   tasks:

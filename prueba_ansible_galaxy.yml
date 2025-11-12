@@ -1,6 +1,6 @@
 ---
 - name: ejecutar en localhost sin tocar el sistema
-  hosts: localhost
+  hosts: all
   gather_facts: false
   become: false
 
