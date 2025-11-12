@@ -2,7 +2,7 @@
 - name: ejecutar en localhost sin tocar el sistema
   hosts: localhost
   gather_facts: false
-  become: true
+  become: false
 
   tasks:
     - name: Obtener timestamp actual
