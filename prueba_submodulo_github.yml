@@ -1,0 +1,9 @@
+---
+- name: Prueba submodulo desde GitHub
+  hosts: localhost
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Ejecutar rol ping_rol
+      ansible.builtin.include_role:
+        name: ping_rol
